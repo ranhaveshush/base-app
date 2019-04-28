@@ -1,1 +1,4 @@
+apply from: "${project.rootDir}/config/gradle/tools/checkstyle.gradle"
 apply from: "${project.rootDir}/config/gradle/tools/lint.gradle"
+
+check.dependsOn 'checkstyle', 'lint'
