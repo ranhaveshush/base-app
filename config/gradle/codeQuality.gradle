@@ -1,0 +1,1 @@
+apply from: "${project.rootDir}/config/gradle/tools/lint.gradle"
