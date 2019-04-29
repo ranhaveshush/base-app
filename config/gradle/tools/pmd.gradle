@@ -15,6 +15,6 @@ task pmd(type: Pmd) {
     reports {
         xml.enabled = false
         html.enabled = true
-        html.destination file("build/reports/pmd/pmd-results.html")
+        html.destination file("$project.buildDir/reports/pmd/pmd-results.html")
     }
 }
