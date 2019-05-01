@@ -4,5 +4,5 @@ detekt {
     toolVersion = versions.plugin.detekt
     input = files("src/main/kotlin")
     filters = ".*/resources/.*,.*/build/.*"
-//    baseline = file("$project.rootDir/config/detekt/detekt-rules.yml")
+    baseline = file("$project.rootDir/config/detekt/detekt-baseline.xml")
 }
