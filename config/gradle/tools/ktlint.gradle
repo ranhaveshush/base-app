@@ -16,3 +16,13 @@ task ktlint(type: JavaExec) {
     args "src/**/*.kt"
     // args "--reporter=checkstyle, output=${buildDir}/ktlint.xml
 }
+
+task ktlintFormat(type: JavaExec) {
+    description = 'Fix Kotlin code style deviations.'
+    group = 'formatting'
+
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+
+    args "-F", "src/**/*.kt"
+}
