@@ -32,6 +32,7 @@ allprojects {
     sdk.compile = 28
     versions.sdk = sdk
 
+    versions.ktlint = '0.32.0'
     versions.kotlin = versions.plugin.kotlin
     versions.core_ktx = '1.0.1'
     versions.junit = '4.12'
