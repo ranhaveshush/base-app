@@ -1,19 +1,17 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 apply from: "${project.rootDir}/config/gradle/moduleTasks.gradle"
 
 android {
-    compileSdkVersion versions.sdk.compile
+    compileSdkVersion version_compile_sdk
     defaultConfig {
         applicationId "com.example.baseapp"
-        minSdkVersion versions.sdk.min
-        targetSdkVersion versions.sdk.target
-        versionCode versions.version_code
-        versionName versions.version_name
+        minSdkVersion version_min_sdk
+        targetSdkVersion version_target_sdk
+        versionCode version_code
+        versionName version_name
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,15 +20,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
-    implementation "androidx.core:core-ktx:$versions.core_ktx"
-    implementation "androidx.appcompat:appcompat:$versions.appcompat"
-    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
-    testImplementation "junit:junit:$versions.junit"
-    androidTestImplementation "androidx.test:runner:$versions.runner"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso_core"
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${version_kotlin_stdlib_jdk8}"
+    implementation "androidx.core:core-ktx:${version_core_ktx}"
+    // AndroidX UI
+    implementation "androidx.appcompat:appcompat:${version_appcompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${version_constraintlayout}"
+    // AndroidX lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:${version_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${version_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${version_lifecycle}"
+    // AndroidX navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:${version_navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${version_navigation}"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${version_retrofit}"
+    implementation "com.squareup.retrofit2:converter-moshi:${version_retrofit}"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${version_retrofit_call_adapter}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${version_logging_interceptor}"
+    // Test
+    testImplementation "junit:junit:${version_junit}"
+    androidTestImplementation "androidx.test.ext:junit-ktx:${version_ext_junit}"
+    androidTestImplementation "androidx.test:runner:${version_runner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${version_espresso_core}"
 }
