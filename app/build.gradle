@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 apply from: "${project.rootDir}/config/gradle/moduleTasks.gradle"
 
@@ -20,9 +21,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -47,6 +54,7 @@ dependencies {
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${version_retrofit_call_adapter}"
     implementation "com.squareup.okhttp3:logging-interceptor:${version_logging_interceptor}"
     // Test
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation "junit:junit:${version_junit}"
     androidTestImplementation "androidx.test.ext:junit-ktx:${version_ext_junit}"
     androidTestImplementation "androidx.test:runner:${version_runner}"
