@@ -1,6 +1,6 @@
 package com.example.baseapp.api
 
-import com.example.baseapp.api.data.Repo
+import com.example.baseapp.vo.Repo
 import com.example.baseapp.vo.Resource
 import kotlinx.coroutines.flow.flow
 

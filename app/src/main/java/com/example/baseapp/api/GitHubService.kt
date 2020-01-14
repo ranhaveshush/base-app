@@ -1,6 +1,6 @@
 package com.example.baseapp.api
 
-import com.example.baseapp.api.data.Repo
+import com.example.baseapp.vo.Repo
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

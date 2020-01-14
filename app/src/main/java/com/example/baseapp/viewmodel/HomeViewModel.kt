@@ -1,7 +1,7 @@
 package com.example.baseapp.viewmodel
 
 import androidx.lifecycle.*
-import com.example.baseapp.api.data.Repo
+import com.example.baseapp.vo.Repo
 import com.example.baseapp.repository.HomeRepository
 import com.example.baseapp.vo.Resource
 import kotlinx.coroutines.Dispatchers

@@ -7,7 +7,7 @@
 
         <variable
                 name="repo"
-                type="com.example.baseapp.api.data.Repo" />
+                type="com.example.baseapp.vo.Repo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

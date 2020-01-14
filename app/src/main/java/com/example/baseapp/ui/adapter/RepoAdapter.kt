@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.baseapp.api.data.Repo
+import com.example.baseapp.vo.Repo
 import com.example.baseapp.databinding.ListItemRepoBinding
 
 class RepoAdapter : ListAdapter<Repo, RepoViewHolder>(RepoDiffCallback()) {

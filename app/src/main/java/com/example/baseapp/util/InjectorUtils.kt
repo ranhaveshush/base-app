@@ -11,7 +11,7 @@ object InjectorUtils {
         return HomeViewModelFactory(getHomeRepository())
     }
 
-    fun getHomeRepository(): HomeRepository {
-        return HomeRepository.create(GitHubClient(GitHubApi))
-    }
+    fun getHomeRepository() = HomeRepository(getGitHubClient())
+
+    private fun getGitHubClient() = GitHubClient(GitHubApi)
 }

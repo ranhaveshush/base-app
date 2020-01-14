@@ -1,4 +1,4 @@
-package com.example.baseapp.api.data
+package com.example.baseapp.vo
 
 import com.squareup.moshi.Json
 
