@@ -1,4 +1,4 @@
-package com.example.baseapp.api
+package com.example.baseapp.api.github
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

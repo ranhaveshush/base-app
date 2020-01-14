@@ -14,6 +14,7 @@ data class Resource<T> private constructor(
     enum class Status {
         LOADING,
         SUCCESS,
+        EMPTY,
         FAILURE
     }
 
@@ -27,10 +28,9 @@ data class Resource<T> private constructor(
         val cause: Throwable? = null
     ) {
         companion object {
-            val LOADING =
-                State(Status.LOADING)
-            val SUCCESS =
-                State(Status.SUCCESS)
+            val LOADING = State(Status.LOADING)
+            val SUCCESS = State(Status.SUCCESS)
+            val EMPTY = State(Status.EMPTY)
 
             fun error(message: String, cause: Throwable? = null) =
                 State(
@@ -45,8 +45,7 @@ data class Resource<T> private constructor(
         /**
          * Convenient method to build a loading resource.
          */
-        fun <T> loading() =
-            Resource<T>(State.LOADING)
+        fun <T> loading() = Resource<T>(State.LOADING)
 
         /**
          * Convenient method to build a success resource with a given data.
@@ -58,6 +57,8 @@ data class Resource<T> private constructor(
             data
         )
 
+        fun <T> empty() = Resource<T>(State.EMPTY)
+
         /**
          * Convenient method to build a failure resource with a given error message and
          * optionally a [cause][Throwable].
@@ -65,12 +66,11 @@ data class Resource<T> private constructor(
          * @param message The failure error message.
          * @param cause The failure error throwable cause, if exists.
          */
-        fun <T> error(message: String, cause: Throwable? = null) =
-            Resource<T>(
-                State.error(
-                    message,
-                    cause
-                )
+        fun <T> error(message: String, cause: Throwable? = null) = Resource<T>(
+            State.error(
+                message,
+                cause
             )
+        )
     }
 }
