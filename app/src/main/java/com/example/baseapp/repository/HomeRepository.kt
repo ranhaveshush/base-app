@@ -8,8 +8,9 @@ import com.example.baseapp.vo.Repo
 import com.example.baseapp.vo.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class HomeRepository(private val client: GitHubClient) {
+class HomeRepository @Inject constructor(private val client: GitHubClient) {
 
     suspend fun listRepos(username: String): Flow<Resource<List<Repo>>> = flow {
         emit(Resource.loading())

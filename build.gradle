@@ -3,7 +3,7 @@ buildscript {
     ext.version_android_gradle = '4.0.1'
     ext.version_kotlin = '1.4.10'
     ext.version_detekt = '1.0.0-RC14'
-    ext.version_hilt = '2.28-alpha'
+    ext.version_hilt = '2.29.1-alpha'
     ext.version_navigation = '2.1.0-alpha05'
 
     repositories {
@@ -29,6 +29,9 @@ allprojects {
     ext.version_min_sdk = 21
     ext.version_target_sdk = 30
     ext.version_compile_sdk = 30
+
+    // DI
+    ext.version_hilt_lifecycle_viewmodel = '1.0.0-alpha02'
 
     // Test
     ext.version_ext_junit = '1.1.2'

@@ -7,9 +7,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object GitHubApi {
-    private const val BASE_URL = "https://api.github.com/"
+private const val BASE_URL = "https://api.github.com/"
 
+class GitHubApi {
     val service: GitHubService = create(
         HttpUrl.parse(BASE_URL)!!,
         GitHubService::class.java

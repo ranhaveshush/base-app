@@ -10,14 +10,13 @@ import androidx.lifecycle.Observer
 import com.example.baseapp.R
 import com.example.baseapp.databinding.FragmentHomeBinding
 import com.example.baseapp.ui.adapter.RepoAdapter
-import com.example.baseapp.util.InjectorUtils
 import com.example.baseapp.viewmodel.HomeViewModel
 import com.example.baseapp.vo.Resource.Status
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
-    private val viewModel: HomeViewModel by viewModels {
-        InjectorUtils.provideHomeViewModelFactory()
-    }
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

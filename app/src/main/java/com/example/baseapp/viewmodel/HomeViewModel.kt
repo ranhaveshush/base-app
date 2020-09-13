@@ -1,12 +1,15 @@
 package com.example.baseapp.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.baseapp.repository.HomeRepository
 import com.example.baseapp.vo.Repo
 import com.example.baseapp.vo.Resource
 import kotlinx.coroutines.Dispatchers
 
-class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
+class HomeViewModel @ViewModelInject constructor(
+    private val repository: HomeRepository
+) : ViewModel() {
     val username = MutableLiveData<String>()
 
     val repos = username.switchMap { username ->
