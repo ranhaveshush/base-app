@@ -27,8 +27,8 @@ allprojects {
 
     // Android SDK
     ext.version_min_sdk = 21
-    ext.version_target_sdk = 28
-    ext.version_compile_sdk = 28
+    ext.version_target_sdk = 30
+    ext.version_compile_sdk = 30
 
     // Test
     ext.version_ext_junit = '1.1.2'
