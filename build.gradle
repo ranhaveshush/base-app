@@ -1,9 +1,10 @@
 buildscript {
     // Build script plugins
     ext.version_android_gradle = '4.0.1'
-    ext.version_kotlin_gradle = '1.4.10'
-    ext.version_detekt_gradle = '1.0.0-RC14'
-    ext.version_navigation_gradle = '2.1.0-alpha05'
+    ext.version_kotlin = '1.4.10'
+    ext.version_detekt = '1.0.0-RC14'
+    ext.version_hilt = '2.28-alpha'
+    ext.version_navigation = '2.1.0-alpha05'
 
     repositories {
         google()
@@ -12,9 +13,10 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:${version_android_gradle}"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${version_kotlin_gradle}"
-        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${version_detekt_gradle}"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${version_navigation_gradle}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${version_kotlin}"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${version_detekt}"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:${version_hilt}"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${version_navigation}"
     }
 }
 
@@ -36,7 +38,6 @@ allprojects {
 
     // Kotlin
     ext.version_ktlint = '0.32.0'
-    ext.version_kotlin_stdlib_jdk8 = '1.4.0'
     ext.version_core_ktx = '1.5.0-alpha02'
     ext.version_kotlinx_coroutines = '1.2.1'
 
