@@ -31,7 +31,7 @@ allprojects {
     ext.version_compile_sdk = 30
 
     // DI
-    ext.version_hilt_lifecycle_viewmodel = '1.0.0-alpha02'
+    ext.version_hilt_lifecycle_viewmodel = '1.0.0-alpha03'
 
     // Test
     ext.version_ext_junit = '1.1.2'
