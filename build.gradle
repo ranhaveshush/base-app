@@ -2,7 +2,7 @@ buildscript {
     // Build script plugins
     ext.version_android_gradle = '7.1.0'
     ext.version_kotlin = '1.6.10'
-    ext.version_detekt = '1.16.0-RC2'
+    ext.version_detekt = '1.19.0'
     ext.version_hilt = '2.40.5'
     ext.version_navigation = '2.4.0'
 
