@@ -5,11 +5,11 @@ import com.example.baseapp.api.github.GitHubClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 class NetworkModule {
     @Provides
     fun provideGithubClient(api: GitHubApi): GitHubClient = GitHubClient(api)
