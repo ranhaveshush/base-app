@@ -4,7 +4,7 @@ buildscript {
     ext.version_kotlin = '1.4.30'
     ext.version_detekt = '1.16.0-RC2'
     ext.version_hilt = '2.33-beta'
-    ext.version_navigation = '2.3.3'
+    ext.version_navigation = '2.4.0'
 
     repositories {
         google()
@@ -41,7 +41,7 @@ allprojects {
 
     // Kotlin
     ext.version_ktlint = '0.32.0'
-    ext.version_core_ktx = '1.5.0-beta02'
+    ext.version_core_ktx = '1.8.0-alpha03'
     ext.version_kotlinx_coroutines = '1.2.1'
 
     // AndroidX
