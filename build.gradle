@@ -42,7 +42,7 @@ allprojects {
 
     // Kotlin
     ext.version_ktlint = '0.32.0'
-    ext.version_core_ktx = '1.8.0-alpha03'
+    ext.version_core_ktx = '1.8.0-alpha04'
     ext.version_kotlinx_coroutines = '1.2.1'
 
     // AndroidX
