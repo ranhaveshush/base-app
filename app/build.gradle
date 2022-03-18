@@ -32,6 +32,14 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    lint {
+        abortOnError true
+        htmlOutput file("$project.buildDir/reports/lint/lint-results.html")
+        htmlReport true
+        ignoreWarnings false
+        lintConfig file("$rootDir/config/lint/lint-rules.xml")
+        xmlReport false
+    }
 }
 
 dependencies {
@@ -42,7 +50,7 @@ dependencies {
     // DI
     implementation "com.google.dagger:hilt-android:${version_hilt}"
     kapt "com.google.dagger:hilt-android-compiler:${version_hilt}"
-    kapt "androidx.hilt:hilt-compiler:${version_hilt_lifecycle_viewmodel}"
+    kapt "androidx.hilt:hilt-compiler:${version_hilt_compiler}"
     // AndroidX UI
     implementation "androidx.appcompat:appcompat:${version_appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${version_constraintlayout}"
