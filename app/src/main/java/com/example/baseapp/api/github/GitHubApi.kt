@@ -2,6 +2,7 @@ package com.example.baseapp.api.github
 
 import com.example.baseapp.BuildConfig
 import okhttp3.HttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,7 +12,7 @@ private const val BASE_URL = "https://api.github.com/"
 
 class GitHubApi {
     val service: GitHubService = create(
-        HttpUrl.parse(BASE_URL)!!,
+        BASE_URL.toHttpUrlOrNull()!!,
         GitHubService::class.java
     )
 
